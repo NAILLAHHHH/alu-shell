@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Manages the manage_my_process script
+# Script to manage manage_my_process: start, stop, restart
 
 PROCESS_NAME="manage_my_process"
 PID_FILE="/var/run/my_process.pid"
@@ -19,7 +19,7 @@ start() {
 							        echo "$PROCESS_NAME is not running."
 								        exit 1
 									    fi
-									        kill $(cat "$PID_FILE") && rm -f "$PID_FILE"
+									        kill "$(cat "$PID_FILE")" && rm -f "$PID_FILE"
 										    echo "$PROCESS_NAME stopped"
 									    }
 
